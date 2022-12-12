@@ -1,7 +1,12 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const FooterContainer = styled.footer`
+  margin-top: auto;
+`;
 
 function Footer() {
-  return <div>Footer</div>;
+  return <FooterContainer>Footer</FooterContainer>;
 }
 
 export default Footer;
