@@ -1,7 +1,7 @@
 import React from 'react';
 
-function vision() {
+function Vision() {
   return <div>vision</div>;
 }
 
-export default vision;
+export default Vision;

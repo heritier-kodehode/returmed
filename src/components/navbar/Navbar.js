@@ -1,10 +1,47 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { Context } from '../../App';
+import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { langDataEng } from '../../data/lang';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { keyframes } from 'styled-components';
 import menuLogo from '../../images/menulogo.jpg';
+
+const LangBtn = styled.button`
+  font-size: 13px;
+  border: none;
+  padding: 0 5px;
+  cursor: pointer;
+  border: 1px solid palevioletred;
+  background-color: ${(props) =>
+    props.activeLang === langDataEng ? 'white' : 'red'};
+`;
+const LangBtnSecond = styled.button`
+  font-size: 13px;
+  border: none;
+  padding: 0 5px;
+  cursor: pointer;
+  border: 1px solid palevioletred;
+  background-color: ${(props) =>
+    props.activeLang === langDataEng ? 'red' : 'white'};
+`;
+
+const LangText = styled.span`
+  font-size: 13px;
+  border: none;
+  padding: 0 5px;
+  font-weight: 900;
+  color: red;
+  text-decoration: underline;
+`;
+
+const LangDiv = styled.div`
+  margin-left: auto;
+  padding-right: 20px;
+`;
+
 const NavBarContainer = styled.header`
   display: flex;
   position: fixed;
@@ -12,7 +49,7 @@ const NavBarContainer = styled.header`
   width: 100%;
   min-width: 100%;
   justify-content: space-between;
-  padding: 0 10px;
+
   align-items: center;
   position: relative;
 
@@ -23,9 +60,10 @@ const NavBarContainer = styled.header`
 `;
 
 const LogoContainer = styled.div`
-  height: 155px;
+  height: 200px;
   display: flex;
   align-items: center;
+  width: 100%;
 `;
 
 const MobileMenuContainer = styled.div`
@@ -34,7 +72,18 @@ const MobileMenuContainer = styled.div`
   }
 `;
 
+//keyframe
+const topToBottom = keyframes`
+  0% {
+    margin-top: -100%;
+  }
+  100% {
+    margin-top: 0%;
+  }
+`;
+
 const MobileMenuList = styled.ul`
+  animation: ${topToBottom} 0.5s ease;
   position: absolute;
   top: 0;
   left: 0;
@@ -46,9 +95,10 @@ const MobileMenuList = styled.ul`
 
   z-index: 99;
   background-color: white;
-  transition: all 2s;
+
   height: ${(props) => (props.mobileMenuActive ? '100vh' : '0vh')};
 `;
+
 const MobileMenuListItem = styled.li`
   list-style: none;
   text-align: center;
@@ -56,6 +106,7 @@ const MobileMenuListItem = styled.li`
 const MobileMenuListLogo = styled.li`
   list-style: none;
   text-align: center;
+  padding-bottom: 3rem;
 `;
 const MobileMenuListKross = styled.li`
   list-style: none;
@@ -72,38 +123,86 @@ const MenuContainer = styled.ul`
   color: white;
   align-items: center;
   padding: 2rem 2rem;
+
   @media (max-width: 990px) {
     display: none;
   }
 `;
 const MenuItem = styled.li`
   list-style: none;
-  margin-right: 10px;
+  padding-right: 10px;
+  text-decoration: none;
 `;
 
-const LogoImgMobile = styled.img``;
+const LogoImgMobile = styled.img`
+  height: 150px;
+`;
 
 const LogoImgHeader = styled.img`
-  margin: 50px 0;
+  height: 75px;
+
+  @media (min-width: 990px) {
+    height: 125px;
+  }
 `;
 
 const StyledIcon = styled(FontAwesomeIcon)`
   font-size: 30px;
   cursor: pointer;
-  padding: 5px;
+  padding: 0 35px 0 0;
   width: min-content;
 `;
 
+const StyledMobLink = styled(Link)`
+  padding: 10px 0;
+  text-decoration: none;
+  color: green;
+  &:active {
+    color: green;
+  }
+`;
+
+//Navigation Header
 function Navbar() {
-  const [mobileMenuActive, setMobileMenuActive] = useState(false);
+  const { langData, handleLanguage } = useContext(Context);
+  const navLinkStyles = ({ isActive }) => {
+    return {
+      color: isActive ? 'white' : 'lightgreen',
+      textDecoration: 'none',
+    };
+  };
+
+  const [mobileMenuActive = false, setMobileMenuActive] = useState();
 
   function handleMobileMenu() {
     setMobileMenuActive(!mobileMenuActive);
   }
+
   return (
     <NavBarContainer>
       <LogoContainer>
         <LogoImgHeader src={menuLogo} placeholder='logo' />
+        <LangDiv>
+          <LangText>Lang</LangText>
+          <LangBtnSecond
+            onClick={(e) => {
+              handleLanguage(e);
+            }}
+            id='engLang'
+            activeLang={langData}
+          >
+            English
+          </LangBtnSecond>
+          <LangBtn
+            onClick={(e) => {
+              handleLanguage(e);
+            }}
+            id='nokLang'
+            activeLang={langData}
+          >
+            Norsk
+          </LangBtn>
+        </LangDiv>
       </LogoContainer>
       <MobileMenuContainer>
         <MobileMenuList mobileMenuActive={mobileMenuActive}>
@@ -114,14 +213,70 @@ function Navbar() {
             <LogoImgMobile src={menuLogo} placeholder='logo' />
           </MobileMenuListLogo>
 
-          <MobileMenuListItem>Home</MobileMenuListItem>
-          <MobileMenuListItem>Partners</MobileMenuListItem>
+          <MobileMenuListItem>
+            <StyledMobLink to='/'>{langData.navBar[0]}</StyledMobLink>
+          </MobileMenuListItem>
+          <MobileMenuListItem>
+            <StyledMobLink to='/partners'>{langData.navBar[1]}</StyledMobLink>
+          </MobileMenuListItem>
+          <MobileMenuListItem>
+            <StyledMobLink to='/our-vision'>{langData.navBar[2]}</StyledMobLink>
+          </MobileMenuListItem>
+          <MobileMenuListItem>
+            <StyledMobLink to='/about'>{langData.navBar[3]}</StyledMobLink>
+          </MobileMenuListItem>
+          <MobileMenuListItem>
+            <StyledMobLink to='/return-unit'>
+              {langData.navBar[4]}
+            </StyledMobLink>
+          </MobileMenuListItem>
+          <MobileMenuListItem>
+            <StyledMobLink to='/climate-compensation'>
+              {langData.navBar[5]}
+            </StyledMobLink>
+          </MobileMenuListItem>
+          <MobileMenuListItem>
+            <StyledMobLink to='/contact-us'>{langData.navBar[6]}</StyledMobLink>
+          </MobileMenuListItem>
         </MobileMenuList>
         <StyledIcon onClick={handleMobileMenu} icon={faBars} />
       </MobileMenuContainer>
       <MenuContainer>
-        <MenuItem>Home</MenuItem>
-        <MenuItem>Partners</MenuItem>
+        <MenuItem>
+          <NavLink style={navLinkStyles} to='/'>
+            {langData.navBar[0]}
+          </NavLink>
+        </MenuItem>
+        <MenuItem>
+          <NavLink style={navLinkStyles} to='/partners'>
+            {langData.navBar[1]}
+          </NavLink>
+        </MenuItem>
+        <MenuItem>
+          <NavLink style={navLinkStyles} to='/our-vision'>
+            {langData.navBar[2]}
+          </NavLink>
+        </MenuItem>
+        <MenuItem>
+          <NavLink style={navLinkStyles} to='/about'>
+            {langData.navBar[3]}
+          </NavLink>
+        </MenuItem>
+        <MenuItem>
+          <NavLink style={navLinkStyles} to='/return-unit'>
+            {langData.navBar[4]}
+          </NavLink>
+        </MenuItem>
+        <MenuItem>
+          <NavLink style={navLinkStyles} to='/climate-compensation'>
+            {langData.navBar[5]}
+          </NavLink>
+        </MenuItem>
+        <MenuItem>
+          <NavLink style={navLinkStyles} to='/contact-us'>
+            {langData.navBar[6]}
+          </NavLink>
+        </MenuItem>
       </MenuContainer>
     </NavBarContainer>
   );

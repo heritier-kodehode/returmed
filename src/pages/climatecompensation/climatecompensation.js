@@ -1,7 +1,7 @@
 import React from 'react';
 
-function climatecompensation() {
+function Climatecompensation() {
   return <div>climatecompensation</div>;
 }
 
-export default climatecompensation;
+export default Climatecompensation;
