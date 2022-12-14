@@ -112,8 +112,6 @@ const MobileMenuListLogo = styled.li`
 const MobileMenuListKross = styled.li`
   list-style: none;
   text-align: right;
-
-  padding: 0 15px 0 0;
 `;
 
 const MenuContainer = styled.ul`
@@ -170,6 +168,10 @@ const StyledIcon = styled(FontAwesomeIcon)`
   cursor: pointer;
   padding: 0 35px 0 0;
   width: min-content;
+  padding: 0 15px 0 0;
+  &:hover {
+    color: #425f57;
+  }
 `;
 
 const StyledMobLink = styled(Link)`

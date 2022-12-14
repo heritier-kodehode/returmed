@@ -2,8 +2,8 @@ import React, { useState, useContext } from 'react';
 import { Context } from '../../App';
 
 import styled from 'styled-components';
-import bgVideo from '../../video/videoplayback.webm';
-import bgVideoHD from '../../video/videoplaybackhd.mp4';
+import bgVideo from '../../video/medsfall.webm';
+import bgVideoHD from '../../video/medsfall.mp4';
 import { Link } from 'react-router-dom';
 
 const HomeContainer = styled.main`
@@ -37,7 +37,7 @@ const OverLay = styled.div`
   position: absolute;
   object-fit: cover;
   width: 100%;
-  height: 100vh;
+  height: auto;
   top: 0;
   left: 0;
   z-index: 0;
@@ -55,18 +55,19 @@ const TextContent = styled.div`
 `;
 const TitleSmall = styled.h3`
   color: #38e54d;
+  text-align: center;
+  font-size: calc(18px + (24 - 16) * (100vw - 600px) / (800 - 400));
 `;
 
 const TitleLarge = styled.h1`
   color: #54b435;
-  font-size: 60px;
-  @media (min-width: 990px) {
-    font-size: 90px;
-  }
+  font-size: calc(60px + (24 - 16) * (100vw - 600px) / (800 - 400));
 `;
 
 const TitleMedium = styled.h2`
+  font-size: calc(16px + (24 - 16) * (100vw - 600px) / (800 - 400));
   color: white;
+  text-align: center;
 `;
 
 const RowContainer = styled.div`
@@ -80,16 +81,23 @@ const CallToAction = styled(Link)`
   color: white;
   border: none;
   border-radius: 100px;
-  background-color: #54b435;
-  font-size: 22px;
-  margin: 30px 10px;
+  background-color: #367e18;
+  font-size: calc(11px + (24 - 16) * (100vw - 400px) / (800 - 400));
+  margin: 20px 10px;
   padding: 20px;
   transition: all 0.5s;
+
   &:hover {
     background-color: white;
     color: black;
   }
 `;
+
+const HomeTriviaContaner = styled.div`
+  position: relative;
+`;
+const HomeInnerTriviaContainer = styled.div``;
+const TriviaContainer = styled.div``;
 
 function Home() {
   const { langData } = useContext(Context);
@@ -97,6 +105,7 @@ function Home() {
     <HomeContainer>
       <HomeBanner role='banner'>
         <BgVideo autoPlay muted loop>
+          <source src={bgVideoHD} type='video/mp4' />
           <source src={bgVideo} type='video/webm' />
         </BgVideo>
         <OverLay></OverLay>
@@ -110,6 +119,9 @@ function Home() {
           </RowContainer>
         </TextContent>
       </HomeBanner>
+      <HomeTriviaContaner>
+        <HomeInnerTriviaContainer></HomeInnerTriviaContainer>
+      </HomeTriviaContaner>
     </HomeContainer>
   );
 }
