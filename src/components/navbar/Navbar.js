@@ -118,7 +118,7 @@ const MenuContainer = styled.ul`
   width: 100%;
   height: 75px;
   display: flex;
-  background-color: black;
+  background-color: #21212d;
   color: white;
   align-items: center;
   padding: 2rem 2rem;
@@ -134,9 +134,6 @@ const MenuItem = styled.li`
   font-size: 1.2rem;
   font-weight: 600;
   color: white;
-  &:hover {
-    color: lightgreen;
-  }
 `;
 const MenuContact = styled(MenuItem)`
   padding-left: 0.8rem;

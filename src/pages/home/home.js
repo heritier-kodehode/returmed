@@ -20,28 +20,31 @@ const HomeContainer = styled.main`
 const HomeBanner = styled.header`
   width: 100%;
   position: relative;
+  height: 70vh;
 `;
 const BgVideo = styled.video`
-  object-fit: cover;
+  object-fit: fill;
+
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   height: auto;
   z-index: -1;
-  overflow: hidden;
+
   background-color: black;
+  height: 100%;
 `;
 
 const OverLay = styled.div`
   position: absolute;
   object-fit: cover;
   width: 100%;
-  height: auto;
+  height: 100%;
   top: 0;
   left: 0;
   z-index: 0;
-  background: rgba(36, 56, 42, 0.8);
+  background: rgba(1, 1, 1, 0.6);
 `;
 
 const TextContent = styled.div`
@@ -60,7 +63,7 @@ const TitleSmall = styled.h3`
 `;
 
 const TitleLarge = styled.h1`
-  color: #54b435;
+  color: #9cff2f;
   font-size: calc(60px + (24 - 16) * (100vw - 600px) / (800 - 400));
 `;
 
@@ -96,8 +99,19 @@ const CallToAction = styled(Link)`
 const HomeTriviaContaner = styled.div`
   position: relative;
 `;
-const HomeInnerTriviaContainer = styled.div``;
-const TriviaContainer = styled.div``;
+const HomeInnerTriviaContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const TriviaContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  color: red;
+`;
+const TriviaImage = styled.img``;
+const TriviaTitle = styled.p``;
+const TriviaUnderTitle = styled.h3``;
+const TriviaInfoText = styled.p``;
 
 function Home() {
   const { langData } = useContext(Context);
@@ -120,7 +134,14 @@ function Home() {
         </TextContent>
       </HomeBanner>
       <HomeTriviaContaner>
-        <HomeInnerTriviaContainer></HomeInnerTriviaContainer>
+        <HomeInnerTriviaContainer>
+          <TriviaContainer>
+            <TriviaImage />
+            <TriviaTitle>{langData.triviaLangOne[0]}</TriviaTitle>
+            <TriviaUnderTitle>{langData.triviaLangOne[1]}</TriviaUnderTitle>
+            <TriviaInfoText>{langData.triviaLangOne[2]}</TriviaInfoText>
+          </TriviaContainer>
+        </HomeInnerTriviaContainer>
       </HomeTriviaContaner>
     </HomeContainer>
   );
