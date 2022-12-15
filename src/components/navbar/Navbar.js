@@ -137,12 +137,13 @@ const MenuItem = styled.li`
 `;
 const MenuContact = styled(MenuItem)`
   padding-left: 0.8rem;
-  background-color: green;
+  background-color: rgba(106, 190, 82, 1);
   height: 75px;
   display: flex;
   align-items: center;
   margin-left: auto;
   transition: all 0.7s;
+  width: 130px;
   &:hover {
     background-color: black;
   }
@@ -181,6 +182,18 @@ const StyledMobLink = styled(Link)`
   }
   &:active {
     color: green;
+  }
+`;
+const StyledNavLink = styled(NavLink)`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  &:hover {
   }
 `;
 
@@ -308,9 +321,7 @@ function Navbar() {
           </NavLink>
         </MenuItem>
         <MenuContact>
-          <NavLink style={navLinkStyles} to='/contact-us'>
-            {langData.navBar[6]}
-          </NavLink>
+          <StyledNavLink to='/contact-us'>{langData.navBar[6]}</StyledNavLink>
         </MenuContact>
       </MenuContainer>
     </NavBarContainer>
