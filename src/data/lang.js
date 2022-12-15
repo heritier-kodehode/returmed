@@ -34,6 +34,13 @@ export const langDataEng = {
     'Easy access to medicines entails the risk of abuse among healthcare personnel. Unused or expired medicines that are collected in the home can be ingested by unintended people.',
     'Medicine on the table',
   ],
+  returnUnitHome: [
+    'About medretur',
+    'Medretur will develop a smart collection box that will make it more efficient and safe for consumers and healthcare personnel to throw away unused and expired medicines, while leaving an equally good globe for everyone who comes later.',
+    'Medretur will also be able to offer customized data collection on actual consumption of medicines.',
+    'The project has received support from the Research Council"s competition arena, STUD-ENT. The funds will play an important role in the start-up phase and the realization of Medretur. Going forward, we will develop and test our MVP at selected pharmacies',
+    'Les mer om returenheten',
+  ],
 };
 
 export const langDataNok = {
@@ -71,5 +78,12 @@ export const langDataNok = {
     'Ansvarlig forbruk',
     'Lett tilgang til medisiner medfører fare for misbruk blant helsepersonell. Ubrukte eller utgåtte medisiner som samles opp i hjemmet, kan bli inntatt av utilsiktede personer.',
     'Medesin på bordet',
+  ],
+  returnUnitHome: [
+    'Om medretur',
+    'Medretur skal utvikle en smart innsamlingsboks som vil gjøre det mer effektivt og sikkert for forbrukere og helsepersonell å kaste ubrukte og utgåtte medisiner, samtidig som vi etterlater en like bra klode for alle som kommer senere.',
+    'Medretur vil også kunne tilby tilpasset datainnsamling om faktisk forbruk av medisiner.',
+    'Prosjektet har fått innvilget støtte fra Forskningsrådet sin konkurransearena, STUD-ENT. Midlene vil spille en viktig rolle i oppstartsfasen og realiseringen av Medretur. Fremover vil vi utvikle og teste vår MVP ved utvalgte apotek',
+    'Les mer om returenheten',
   ],
 };

@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Context } from '../../App';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAnglesRight } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 import bgVideo from '../../video/medsfall.webm';
 import bgVideoHD from '../../video/medsfall.mp4';
@@ -8,6 +9,9 @@ import { Link } from 'react-router-dom';
 import farmaImg from '../../images/Farmas.webp';
 import nathanDiasImg from '../../images/NathanDias.webp';
 import oceanWaterImg from '../../images/OceanWater.webp';
+import unitImg from '../../images/returunit.webp';
+
+//HOME BANNER
 const HomeContainer = styled.main`
   width: 100%;
   display: flex;
@@ -22,7 +26,8 @@ const HomeContainer = styled.main`
 const HomeBanner = styled.header`
   width: 100%;
   position: relative;
-  height: 70vh;
+  height: 100vh;
+  padding: 50px 0 100px 0;
 `;
 const BgVideo = styled.video`
   object-fit: fill;
@@ -46,7 +51,7 @@ const OverLay = styled.div`
   top: 0;
   left: 0;
   z-index: 0;
-  background: rgba(1, 1, 1, 0.6);
+  background: rgba(40, 40, 40, 0.6);
 `;
 
 const TextContent = styled.div`
@@ -61,13 +66,13 @@ const TextContent = styled.div`
 `;
 const TitleSmall = styled.h3`
   width: 70%;
-  color: #38e54d;
+  color: #effffb;
   text-align: center;
   font-size: calc(14px + (24 - 16) * (100vw - 400px) / (800 - 400));
 `;
 
 const TitleLarge = styled.h1`
-  color: #9cff2f;
+  color: #50d890;
   font-size: calc(60px + (24 - 16) * (100vw - 400px) / (800 - 400));
   text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff,
     1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
@@ -75,8 +80,10 @@ const TitleLarge = styled.h1`
 
 const TitleMedium = styled.h2`
   font-size: calc(12px + (24 - 16) * (100vw - 400px) / (800 - 400));
-  color: white;
+  color: #272727;
   text-align: center;
+  text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff,
+    1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 `;
 
 const RowContainer = styled.div`
@@ -88,10 +95,10 @@ const RowContainer = styled.div`
 
 const CallToAction = styled(Link)`
   text-decoration: none;
-  color: white;
-  border: none;
+  color: #fefcf3;
+  border: 3px solid #e8f9fd;
   border-radius: 100px;
-  background-color: #367e18;
+  background-color: #6abe52;
   font-size: clamp(16px, 1.5rem, 40px);
   font-weight: 700;
   margin: 20px 10px;
@@ -102,9 +109,11 @@ const CallToAction = styled(Link)`
   &:hover {
     background-color: white;
     color: black;
+    border: 3px solid #6abe52;
   }
 `;
 
+//TRIVIA SECTION
 const HomeTriviaContaner = styled.div`
   position: relative;
   width: 100%;
@@ -151,6 +160,8 @@ const TriviaContainerGreenBg = styled(TriviaContainer)`
 
   @media (min-width: 990px) {
     margin: 0;
+    transform: scaleY(1.1);
+    border-radius: 10px;
   }
 
   &:hover h5 {
@@ -186,6 +197,65 @@ const TriviaInfoTextLight = styled.p`
   width: 70%;
   color: #f4f7ed;
 `;
+
+//About The Unit On home page
+const UnitInfoContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid black;
+  padding: 100px 0;
+  position: relative;
+  @media (min-width: 990px) {
+    /* flex-direction: row; */
+  }
+`;
+
+const ImgCtaContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  border: 2px solid black;
+`;
+
+const UnitImg = styled.img`
+  width: 35rem;
+`;
+
+const UnitCtaContainer = styled.div`
+  border: 1px solid #6abe52;
+  width: 100%;
+  height: 15rem;
+  display: flex;
+  background-color: #6abe52;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 50px;
+  position: absolute;
+  right: 0;
+  border-radius: 999em 40px 40px 999em;
+  @media (min-width: 990px) {
+    width: 60%;
+  }
+`;
+
+const UnitCtaArrow = styled(FontAwesomeIcon)`
+  font-size: 124px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 20px;
+  border: 10px solid #99cda9;
+`;
+
+const UnitCtaText = styled.p`
+  font-size: calc(30px + (24 - 16) * (100vw - 400px) / (800 - 400));
+  margin-left: 60px;
+`;
+
+const UnitTextContainer = styled.div``;
 
 function Home() {
   const { langData } = useContext(Context);
@@ -240,6 +310,21 @@ function Home() {
           </TriviaContainer>
         </HomeInnerTriviaContainer>
       </HomeTriviaContaner>
+      <UnitInfoContainer>
+        <ImgCtaContainer>
+          <UnitImg
+            src={unitImg}
+            placeholder='Bilde av returenheten til medretur'
+          />
+          <UnitCtaContainer>
+            <UnitCtaArrow icon={faAnglesRight} />
+
+            <UnitCtaText>{langData.returnUnitHome[4]}</UnitCtaText>
+          </UnitCtaContainer>
+        </ImgCtaContainer>
+
+        <UnitTextContainer></UnitTextContainer>
+      </UnitInfoContainer>
     </HomeContainer>
   );
 }
