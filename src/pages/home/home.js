@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Context } from '../../App';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons';
+import { keyframes, Keyframes } from 'styled-components';
 import styled from 'styled-components';
 import bgVideo from '../../video/medsfall.webm';
 import bgVideoHD from '../../video/medsfall.mp4';
@@ -125,7 +126,7 @@ const HomeInnerTriviaContainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
   height: 100%;
-  border: 1px solid black;
+
   @media (min-width: 990px) {
     flex-direction: row;
   }
@@ -137,7 +138,7 @@ const TriviaContainer = styled.div`
   justify-content: center;
   align-items: center;
   color: #50d890;
-
+  border-bottom: 2px solid #59ce8f;
   padding: 60px 0;
   text-align: center;
   height: 550px;
@@ -204,11 +205,11 @@ const UnitInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  border: 1px solid black;
-  padding: 100px 0;
+  padding: 3rem 0 0 0;
   position: relative;
   @media (min-width: 990px) {
-    /* flex-direction: row; */
+    flex-direction: row;
+    padding: 15rem 0 0 0;
   }
 `;
 
@@ -217,7 +218,11 @@ const ImgCtaContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding-left: 2rem;
-  border: 2px solid black;
+  border: 1rem solid #6abe52;
+  position: relative;
+  flex-basis: 1;
+  width: 100%;
+  border-radius: 1rem;
 `;
 
 const UnitImg = styled.img`
@@ -226,19 +231,33 @@ const UnitImg = styled.img`
 
 const UnitCtaContainer = styled.div`
   border: 1px solid #6abe52;
-  width: 100%;
-  height: 15rem;
+  width: 90%;
+  height: 10rem;
   display: flex;
   background-color: #6abe52;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  padding: 0 50px;
+  padding: 2rem 0;
   position: absolute;
   right: 0;
+  bottom: 10%;
   border-radius: 999em 40px 40px 999em;
-  @media (min-width: 990px) {
-    width: 60%;
+`;
+
+const pulseAnimation = keyframes`
+  1% {
+    border: 25px solid #86EE60;
+   
+  }
+  
+  50%{
+    border: 25px solid #6abe52;
+  }
+ 
+
+  100% {
+    border: 25px solid #86EE60;
   }
 `;
 
@@ -247,15 +266,49 @@ const UnitCtaArrow = styled(FontAwesomeIcon)`
   background-color: white;
   border-radius: 50%;
   padding: 20px;
-  border: 10px solid #99cda9;
+  border: 25px solid #99cda9;
+  height: 100%;
+  color: #6abe52;
+  cursor: pointer;
+
+  animation-name: ${pulseAnimation};
+  animation-duration: 0.4s;
+  animation-iteration-count: infinite;
+
+  &:hover {
+    transform: scale(1.1);
+    color: #99cda9;
+  }
 `;
 
 const UnitCtaText = styled.p`
   font-size: calc(30px + (24 - 16) * (100vw - 400px) / (800 - 400));
   margin-left: 60px;
+  color: #f5fdff;
 `;
 
-const UnitTextContainer = styled.div``;
+const UnitTextContainer = styled.div`
+  height: 100%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 1;
+  padding: 5rem 0 0 0;
+`;
+
+const UnitInfoTitleText = styled.h1`
+  width: 80%;
+  margin: 0 auto 2rem auto;
+  font-size: 4rem;
+`;
+
+const UnitParagraphText = styled.p`
+  width: 80%;
+  margin: 0 auto 2rem auto;
+  color: #283739;
+  border-bottom: 2px solid #99cda9;
+  padding: 0 0 1rem 0;
+`;
 
 function Home() {
   const { langData } = useContext(Context);
@@ -323,7 +376,12 @@ function Home() {
           </UnitCtaContainer>
         </ImgCtaContainer>
 
-        <UnitTextContainer></UnitTextContainer>
+        <UnitTextContainer>
+          <UnitInfoTitleText>{langData.returnUnitHome[0]}</UnitInfoTitleText>
+          <UnitParagraphText>{langData.returnUnitHome[1]}</UnitParagraphText>
+          <UnitParagraphText>{langData.returnUnitHome[2]}</UnitParagraphText>
+          <UnitParagraphText>{langData.returnUnitHome[3]}</UnitParagraphText>
+        </UnitTextContainer>
       </UnitInfoContainer>
     </HomeContainer>
   );
