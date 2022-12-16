@@ -209,7 +209,7 @@ const UnitInfoContainer = styled.div`
   position: relative;
   @media (min-width: 990px) {
     flex-direction: row;
-    padding: 15rem 0 0 0;
+    padding: 1.5rem 0 0 0;
   }
 `;
 
@@ -218,11 +218,11 @@ const ImgCtaContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding-left: 2rem;
-  border: 1rem solid #6abe52;
+  padding-top: 10rem;
+  border-right: 0.5rem solid #6abe52;
   position: relative;
   flex-basis: 1;
   width: 100%;
-  border-radius: 1rem;
 `;
 
 const UnitImg = styled.img`
@@ -293,7 +293,7 @@ const UnitTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex-basis: 1;
-  padding: 5rem 0 0 0;
+  padding-top: 10rem;
 `;
 
 const UnitInfoTitleText = styled.h1`
