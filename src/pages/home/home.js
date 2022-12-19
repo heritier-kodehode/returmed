@@ -300,12 +300,14 @@ const UnitInfoTitleText = styled.h1`
   font-size: 4rem;
   border-bottom: 2px solid #99cda9;
   padding: 3rem 5rem;
+  border-bottom-style: dashed;
 `;
 
 const UnitParagraphText = styled.p`
   color: #283739;
   border-bottom: 2px solid #99cda9;
   padding: 3rem 5rem;
+  border-bottom-style: dashed;
 `;
 
 function Home() {
