@@ -209,7 +209,7 @@ const UnitInfoContainer = styled.div`
   position: relative;
   @media (min-width: 990px) {
     flex-direction: row;
-    padding: 15rem 0 0 0;
+    padding: 1.5rem 0 0 0;
   }
 `;
 
@@ -218,11 +218,11 @@ const ImgCtaContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding-left: 2rem;
-  border: 1rem solid #6abe52;
+  padding-top: 10rem;
+  border-right: 0.5rem solid #6abe52;
   position: relative;
   flex-basis: 1;
   width: 100%;
-  border-radius: 1rem;
 `;
 
 const UnitImg = styled.img`
@@ -232,7 +232,7 @@ const UnitImg = styled.img`
 const UnitCtaContainer = styled.div`
   border: 1px solid #6abe52;
   width: 90%;
-  height: 10rem;
+  height: 7rem;
   display: flex;
   background-color: #6abe52;
   flex-direction: row;
@@ -282,32 +282,33 @@ const UnitCtaArrow = styled(FontAwesomeIcon)`
 `;
 
 const UnitCtaText = styled.p`
-  font-size: calc(30px + (24 - 16) * (100vw - 400px) / (800 - 400));
+  font-size: calc(20px + (24 - 16) * (100vw - 400px) / (800 - 400));
   margin-left: 60px;
   color: #f5fdff;
 `;
 
 const UnitTextContainer = styled.div`
   height: 100%;
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   flex-basis: 1;
-  padding: 5rem 0 0 0;
+  padding-top: 10rem;
 `;
 
 const UnitInfoTitleText = styled.h1`
-  width: 80%;
-  margin: 0 auto 2rem auto;
   font-size: 4rem;
+  border-bottom: 2px solid #99cda9;
+  padding: 3rem 5rem;
+  border-bottom-style: dashed;
 `;
 
 const UnitParagraphText = styled.p`
-  width: 80%;
-  margin: 0 auto 2rem auto;
   color: #283739;
   border-bottom: 2px solid #99cda9;
-  padding: 0 0 1rem 0;
+  padding: 2rem 5rem;
+  border-bottom-style: dashed;
+  line-height: 2rem;
 `;
 
 function Home() {
@@ -380,7 +381,9 @@ function Home() {
           <UnitInfoTitleText>{langData.returnUnitHome[0]}</UnitInfoTitleText>
           <UnitParagraphText>{langData.returnUnitHome[1]}</UnitParagraphText>
           <UnitParagraphText>{langData.returnUnitHome[2]}</UnitParagraphText>
-          <UnitParagraphText>{langData.returnUnitHome[3]}</UnitParagraphText>
+          <UnitParagraphText style={{ borderBottom: 'none' }}>
+            {langData.returnUnitHome[3]}
+          </UnitParagraphText>
         </UnitTextContainer>
       </UnitInfoContainer>
     </HomeContainer>
