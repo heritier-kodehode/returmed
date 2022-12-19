@@ -62,6 +62,7 @@ export const langDataEng = {
     'If you Want to know more information about us just enter your email',
     'go',
   ],
+  partners: ['Collaboration partners'],
 };
 
 export const langDataNok = {
@@ -128,4 +129,5 @@ export const langDataNok = {
     'Hvis du vil ha mer informasjon om oss, skriv inn e-posten din',
     'gå',
   ],
+  partners: ['Samarbeidspartnere'],
 };
