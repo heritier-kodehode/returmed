@@ -41,6 +41,27 @@ export const langDataEng = {
     'The project has received support from the Research Council"s competition arena, STUD-ENT. The funds will play an important role in the start-up phase and the realization of Medretur. Going forward, we will develop and test our MVP at selected pharmacies',
     'Les mer om returenheten',
   ],
+  footer: [
+    'Contact Us',
+    'E-mail address',
+    'post@medretur.no',
+    'visiting address',
+    'Gründerloftet',
+    'Smedasundet 96',
+    '5528 Haugesund',
+
+    'Org. no.',
+    '927 387 352',
+
+    'Medretur deliver Efficient, safe and sustainable return of medicines',
+    'Copyrights © 2022',
+    'Medretur',
+    'Designed by',
+    'Heritier Z.A',
+    'Get in touch',
+    'If you Want to know more information about us just enter your email',
+    'go',
+  ],
 };
 
 export const langDataNok = {
@@ -85,5 +106,26 @@ export const langDataNok = {
     'Medretur vil også kunne tilby tilpasset datainnsamling om faktisk forbruk av medisiner.',
     'Prosjektet har fått innvilget støtte fra Forskningsrådet sin konkurransearena, STUD-ENT. Midlene vil spille en viktig rolle i oppstartsfasen og realiseringen av Medretur. Fremover vil vi utvikle og teste vår MVP ved utvalgte apotek',
     'Les mer om returenheten',
+  ],
+  footer: [
+    'Kontakt oss',
+    'E-postadresse',
+    'post@medretur.no',
+    'Besøksadresse',
+    'Gründerloftet',
+    'Smedasundet 96',
+    '5528 Haugesund',
+
+    'Org. nr.',
+    '927 387 352',
+
+    'Medretur leverer effektiv, trygg og bærekraftig retur av medisiner',
+    'Copyrights © 2022',
+    'Medretur',
+    'Designet av',
+    'Heritier Z.A',
+    'Ta kontakt',
+    'Hvis du vil ha mer informasjon om oss, skriv inn e-posten din',
+    'gå',
   ],
 };
