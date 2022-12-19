@@ -289,7 +289,7 @@ const UnitCtaText = styled.p`
 
 const UnitTextContainer = styled.div`
   height: 100%;
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   flex-basis: 1;
@@ -306,8 +306,9 @@ const UnitInfoTitleText = styled.h1`
 const UnitParagraphText = styled.p`
   color: #283739;
   border-bottom: 2px solid #99cda9;
-  padding: 3rem 5rem;
+  padding: 2rem 5rem;
   border-bottom-style: dashed;
+  line-height: 2rem;
 `;
 
 function Home() {
