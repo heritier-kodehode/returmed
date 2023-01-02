@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/returmed/static/css/main.4e7ab1ea.css",
-    "main.js": "/returmed/static/js/main.99167f22.js",
+    "main.js": "/returmed/static/js/main.ca8a9f10.js",
     "static/js/787.77cd084b.chunk.js": "/returmed/static/js/787.77cd084b.chunk.js",
     "static/media/medsfall.mp4": "/returmed/static/media/medsfall.56f8b2f589855e09bfa9.mp4",
     "static/media/medsfall.webm": "/returmed/static/media/medsfall.31aacb4c13c419f6bd56.webm",
@@ -12,11 +12,11 @@
     "static/media/medreturlogonobg.webp": "/returmed/static/media/medreturlogonobg.f4e143413decb2d9725f.webp",
     "index.html": "/returmed/index.html",
     "main.4e7ab1ea.css.map": "/returmed/static/css/main.4e7ab1ea.css.map",
-    "main.99167f22.js.map": "/returmed/static/js/main.99167f22.js.map",
+    "main.ca8a9f10.js.map": "/returmed/static/js/main.ca8a9f10.js.map",
     "787.77cd084b.chunk.js.map": "/returmed/static/js/787.77cd084b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4e7ab1ea.css",
-    "static/js/main.99167f22.js"
+    "static/js/main.ca8a9f10.js"
   ]
 }
