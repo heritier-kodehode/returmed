@@ -1,7 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const SectionContainer = styled.div``;
 
 function Vision() {
-  return <div>vision</div>;
+  return <SectionContainer>vision</SectionContainer>;
 }
 
 export default Vision;
