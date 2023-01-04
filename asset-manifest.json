@@ -1,10 +1,15 @@
 {
   "files": {
-    "main.css": "/returmed/static/css/main.4e7ab1ea.css",
-    "main.js": "/returmed/static/js/main.ae83916a.js",
+    "main.css": "/returmed/static/css/main.a7e3afc5.css",
+    "main.js": "/returmed/static/js/main.0deeaf11.js",
     "static/js/787.77cd084b.chunk.js": "/returmed/static/js/787.77cd084b.chunk.js",
     "static/media/medsfall.mp4": "/returmed/static/media/medsfall.56f8b2f589855e09bfa9.mp4",
     "static/media/medsfall.webm": "/returmed/static/media/medsfall.31aacb4c13c419f6bd56.webm",
+    "static/media/clearwater.png": "/returmed/static/media/clearwater.a8e83018bde139dff5fd.png",
+    "static/media/medecinesnobg.png": "/returmed/static/media/medecinesnobg.9998fceeec5c14c7c17a.png",
+    "static/media/medbox.webp": "/returmed/static/media/medbox.c3203ff3504f68d32b56.webp",
+    "static/media/havet.webp": "/returmed/static/media/havet.6b1798dff97ae00ce8ff.webp",
+    "static/media/apoteknatt.webp": "/returmed/static/media/apoteknatt.2dc29641dcf089720b82.webp",
     "static/media/sjukehusapotekavest-logo-removebg-preview.png": "/returmed/static/media/sjukehusapotekavest-logo-removebg-preview.24a1e25846c0e3415ab0.png",
     "static/media/NathanDias.webp": "/returmed/static/media/NathanDias.706a8b72a2c263f7335f.webp",
     "static/media/Farmas.webp": "/returmed/static/media/Farmas.f8af1eb73e720eb8fdaf.webp",
@@ -12,12 +17,12 @@
     "static/media/OceanWater.webp": "/returmed/static/media/OceanWater.81628dff34c9bb70cc5a.webp",
     "static/media/medreturlogonobg.webp": "/returmed/static/media/medreturlogonobg.f4e143413decb2d9725f.webp",
     "index.html": "/returmed/index.html",
-    "main.4e7ab1ea.css.map": "/returmed/static/css/main.4e7ab1ea.css.map",
-    "main.ae83916a.js.map": "/returmed/static/js/main.ae83916a.js.map",
+    "main.a7e3afc5.css.map": "/returmed/static/css/main.a7e3afc5.css.map",
+    "main.0deeaf11.js.map": "/returmed/static/js/main.0deeaf11.js.map",
     "787.77cd084b.chunk.js.map": "/returmed/static/js/787.77cd084b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4e7ab1ea.css",
-    "static/js/main.ae83916a.js"
+    "static/css/main.a7e3afc5.css",
+    "static/js/main.0deeaf11.js"
   ]
 }
