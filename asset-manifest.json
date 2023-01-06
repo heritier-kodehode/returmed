@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/returmed/static/css/main.a7e3afc5.css",
-    "main.js": "/returmed/static/js/main.0deeaf11.js",
+    "main.css": "/returmed/static/css/main.b06874c2.css",
+    "main.js": "/returmed/static/js/main.94943d6d.js",
     "static/js/787.77cd084b.chunk.js": "/returmed/static/js/787.77cd084b.chunk.js",
     "static/media/medsfall.mp4": "/returmed/static/media/medsfall.56f8b2f589855e09bfa9.mp4",
     "static/media/medsfall.webm": "/returmed/static/media/medsfall.31aacb4c13c419f6bd56.webm",
@@ -17,12 +17,12 @@
     "static/media/OceanWater.webp": "/returmed/static/media/OceanWater.81628dff34c9bb70cc5a.webp",
     "static/media/medreturlogonobg.webp": "/returmed/static/media/medreturlogonobg.f4e143413decb2d9725f.webp",
     "index.html": "/returmed/index.html",
-    "main.a7e3afc5.css.map": "/returmed/static/css/main.a7e3afc5.css.map",
-    "main.0deeaf11.js.map": "/returmed/static/js/main.0deeaf11.js.map",
+    "main.b06874c2.css.map": "/returmed/static/css/main.b06874c2.css.map",
+    "main.94943d6d.js.map": "/returmed/static/js/main.94943d6d.js.map",
     "787.77cd084b.chunk.js.map": "/returmed/static/js/787.77cd084b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a7e3afc5.css",
-    "static/js/main.0deeaf11.js"
+    "static/css/main.b06874c2.css",
+    "static/js/main.94943d6d.js"
   ]
 }
