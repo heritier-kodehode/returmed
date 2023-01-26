@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/returmed/static/css/main.f195b41e.css",
-    "main.js": "/returmed/static/js/main.d68a8402.js",
+    "main.js": "/returmed/static/js/main.bd15ac38.js",
     "static/js/787.77cd084b.chunk.js": "/returmed/static/js/787.77cd084b.chunk.js",
     "static/media/medsfall.mp4": "/returmed/static/media/medsfall.56f8b2f589855e09bfa9.mp4",
     "static/media/medsfall.webm": "/returmed/static/media/medsfall.31aacb4c13c419f6bd56.webm",
@@ -14,6 +14,7 @@
     "static/media/OleAlexander.webp": "/returmed/static/media/OleAlexander.11ac33ad75bbbad43449.webp",
     "static/media/sjukehusapotekavest-logo-removebg-preview.png": "/returmed/static/media/sjukehusapotekavest-logo-removebg-preview.24a1e25846c0e3415ab0.png",
     "static/media/checkout.webp": "/returmed/static/media/checkout.605d28a7c38a54acbc6f.webp",
+    "static/media/diploma.webp": "/returmed/static/media/diploma.f95a7799c01c11351d1a.webp",
     "static/media/NathanDias.webp": "/returmed/static/media/NathanDias.706a8b72a2c263f7335f.webp",
     "static/media/Farmas.webp": "/returmed/static/media/Farmas.f8af1eb73e720eb8fdaf.webp",
     "static/media/larsb.webp": "/returmed/static/media/larsb.17eba6aeb7917830f28d.webp",
@@ -24,11 +25,11 @@
     "static/media/medreturlogonobg.webp": "/returmed/static/media/medreturlogonobg.f4e143413decb2d9725f.webp",
     "index.html": "/returmed/index.html",
     "main.f195b41e.css.map": "/returmed/static/css/main.f195b41e.css.map",
-    "main.d68a8402.js.map": "/returmed/static/js/main.d68a8402.js.map",
+    "main.bd15ac38.js.map": "/returmed/static/js/main.bd15ac38.js.map",
     "787.77cd084b.chunk.js.map": "/returmed/static/js/787.77cd084b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f195b41e.css",
-    "static/js/main.d68a8402.js"
+    "static/js/main.bd15ac38.js"
   ]
 }
