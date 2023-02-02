@@ -1,3 +1,20 @@
+/*!
+ * is-plain-object <https://github.com/jonschlinkert/is-plain-object>
+ *
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+/*! Bundled license information:
+
+event-source-polyfill/src/eventsource.js:
+  (** @license
+   * eventsource.js
+   * Available under MIT License (MIT)
+   * https://github.com/Yaffle/EventSource/
+   *)
+*/
+
 /**
  * @license React
  * react-dom.production.min.js
