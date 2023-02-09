@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import { Context } from '../../App';
+
 import forsknlogo from '../../images/forskningsradet-logo-removebg-preview.png';
 import akanlogo from '../../images/akanlogo.png';
 import himlogo from '../../images/himlogo-removebg-preview.png';
@@ -32,6 +33,12 @@ const PartnersContainer = styled.div`
   }
 `;
 
+const PartnerHeader = styled.header`
+  width: 100%;
+  background: #385d6d;
+  margin-bottom: 5rem;
+`;
+
 const PartnersTitle = styled.h1`
   letter-spacing: normal;
   text-transform: uppercase;
@@ -41,7 +48,7 @@ const PartnersTitle = styled.h1`
   margin: 2rem 0;
   border-top: 1px solid #6abe52;
   text-decoration: underline;
-  color: #1c6758;
+  color: white;
   @media (min-width: 990px) {
     border-top: none;
   }
@@ -90,9 +97,17 @@ const PartnerLogoContainer = styled.img`
 
 function Partners() {
   const { langData } = useContext(Context);
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
   return (
     <PartnersContainer>
-      <PartnersTitle>{langData.partners[0]}</PartnersTitle>
+      <PartnerHeader>
+        <PartnersTitle>{langData.partners[0]}</PartnersTitle>
+      </PartnerHeader>
       <PartnerLinkContainer
         href={links[0].link}
         style={{ backgroundColor: '' }}

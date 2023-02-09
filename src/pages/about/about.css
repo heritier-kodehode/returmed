@@ -1,0 +1,43 @@
+
+  
+  .shadow-box {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    max-width: 100%;
+    color: #206a5d;
+    margin: 2rem auto;
+    border-radius: 5px;
+    animation: shadow-animation 5s infinite;
+    padding: .5rem ;
+}
+
+
+
+@keyframes shadow-animation {
+  0% {
+    box-shadow: 2px 0px 10px #186842;
+    
+  }
+
+  35% {
+    box-shadow: 1px 0px 10px #35e392;
+    
+  }
+  65%{
+    box-shadow: 1px 0px 10px #35e392;
+  }
+  100% {
+    box-shadow: 2px 0px 10px #155d3b;
+  }
+}
+  
+
+  
+  
+  @media (min-width: 990px) {
+    .shadow-box{
+        width: 50%;
+        margin: 2rem;
+    }
+  }

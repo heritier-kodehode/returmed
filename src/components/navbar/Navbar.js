@@ -84,7 +84,7 @@ const topToBottom = keyframes`
 
 const MobileMenuList = styled.ul`
   animation: ${topToBottom} 0.5s ease;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   min-width: 100%;
@@ -95,7 +95,7 @@ const MobileMenuList = styled.ul`
 
   z-index: 99;
   background-color: white;
-
+  overflow: scroll;
   height: ${(props) => (props.mobileMenuActive ? '100vh' : '0vh')};
 `;
 
@@ -137,7 +137,7 @@ const MenuItem = styled.li`
 `;
 const MenuContact = styled(MenuItem)`
   padding-left: 0.8rem;
-  background-color: rgba(106, 190, 82, 1);
+  background-color: #385d6d;
   height: 75px;
   display: flex;
   align-items: center;
@@ -203,6 +203,12 @@ function Navbar() {
   const navLinkStyles = ({ isActive }) => {
     return {
       color: isActive ? 'lightgreen' : 'white',
+      textDecoration: 'none',
+    };
+  };
+  const navLinkStylessecond = ({ isActive }) => {
+    return {
+      color: isActive ? 'lightgreen' : 'yellow',
       textDecoration: 'none',
     };
   };
@@ -274,10 +280,7 @@ function Navbar() {
             </StyledMobLink>
           </MobileMenuListItem>
           <MobileMenuListItem>
-            <StyledMobLink
-              onClick={handleMobileMenu}
-              to='/climate-compensation'
-            >
+            <StyledMobLink onClick={handleMobileMenu} to='/blog'>
               {langData.navBar[5]}
             </StyledMobLink>
           </MobileMenuListItem>
@@ -316,8 +319,8 @@ function Navbar() {
           </NavLink>
         </MenuItem>
         <MenuItem>
-          <NavLink style={navLinkStyles} to='/climate-compensation'>
-            {langData.navBar[5]}
+          <NavLink style={navLinkStylessecond} to='/blog'>
+            Blog
           </NavLink>
         </MenuItem>
         <MenuContact>

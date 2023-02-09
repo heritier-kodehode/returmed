@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../../images/medreturlogonobg.webp';
 import { Context } from '../../App';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { InstagramIcon, LinkedinIcon } from '../iconssvg/icons';
+
 const FooterContainer = styled.footer`
   margin-top: auto;
 
@@ -18,6 +20,7 @@ const FooterInfoContainer = styled.div`
   padding: 5rem 3rem;
   @media (min-width: 990px) {
     flex-direction: row;
+    justify-content: space-evenly;
   }
 `;
 
@@ -104,21 +107,34 @@ const FooterTextForm = styled.p`
   margin-top: 5.5rem;
   font-weight: 800;
 `;
+
+const CostumeLink = styled.a`
+  text-decoration: none;
+`;
+
 function Footer() {
   const { langData } = useContext(Context);
+  let location = useLocation();
   return (
     <FooterContainer>
-      <FooterInfoContainer>
+      <FooterInfoContainer location={location}>
         <FooterInfoSection>
           <FooterLogo src={logo} placeholder='Logo' />
           <FooterText>{langData.footer[9]}</FooterText>
           <FooterSocialIconsContainer>
-            <InstagramIcon fill='white' />
-            <LinkedinIcon fill='white' />
+            <CostumeLink href='https://www.instagram.com/medretur/'>
+              <InstagramIcon fill='white' />
+            </CostumeLink>
+            <CostumeLink href='https://www.linkedin.com/company/medretur/'>
+              <LinkedinIcon fill='white' />
+            </CostumeLink>
           </FooterSocialIconsContainer>
         </FooterInfoSection>
         <FooterInfoContent>
-          <FooterInfoTitle>{langData.footer[0]}</FooterInfoTitle>
+          <FooterInfoTitle>
+            {' '}
+            {location.pathname == '/contact-us' ? null : langData.footer[0]}
+          </FooterInfoTitle>
           <FooterTextP>{langData.footer[1]}</FooterTextP>
           <FooterTextSmall>{langData.footer[2]}</FooterTextSmall>
           <FooterTextP>{langData.footer[3]}</FooterTextP>
@@ -128,16 +144,18 @@ function Footer() {
           <FooterTextP>{langData.footer[7]}</FooterTextP>
           <FooterTextSmall>{langData.footer[8]}</FooterTextSmall>
         </FooterInfoContent>
-        <FooterInputContainer>
-          <FooterTextForm>{langData.footer[14]}</FooterTextForm>
-          <FooterForm>
-            <FooterInputLabel>
-              {langData.footer[15]}
-              <FooterInput />
-            </FooterInputLabel>
-            <FooterBtn>{langData.footer[16]}</FooterBtn>
-          </FooterForm>
-        </FooterInputContainer>
+        {location.pathname == '/contact-us' ? null : (
+          <FooterInputContainer>
+            <FooterTextForm>{langData.footer[14]}</FooterTextForm>
+            <FooterForm>
+              <FooterInputLabel>
+                {langData.footer[15]}
+                <FooterInput />
+              </FooterInputLabel>
+              <FooterBtn>{langData.footer[16]}</FooterBtn>
+            </FooterForm>
+          </FooterInputContainer>
+        )}
       </FooterInfoContainer>
       <FooterCopyRightContainer>
         <p>

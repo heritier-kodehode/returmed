@@ -11,8 +11,10 @@ import Partners from './pages/partners/Partners';
 import Vision from './pages/vision/vision';
 import Returnunit from './pages/returnunit/returnunit';
 import Contactus from './pages/contactus/contactus';
-import Climatecompensation from './pages/climatecompensation/climatecompensation';
+import Blog from './pages/blog/blog';
 import About from './pages/about/about';
+import Blogpost from './components/blogpost/blogpost';
+import Error from './pages/error/error';
 
 const AppContainer = styled.div`
   display: flex;
@@ -43,11 +45,10 @@ function App() {
           <Route path='/our-vision' element={<Vision />} />
           <Route path='/about' element={<About />} />
           <Route path='/return-unit' element={<Returnunit />} />
-          <Route
-            path='/climate-compensation'
-            element={<Climatecompensation />}
-          />
+          <Route path='/blog' element={<Blog />} />
+          <Route path='/blog/:slug' element={<Blogpost />} />
           <Route path='/contact-us' element={<Contactus />} />
+          <Route path='*' element={<Error />} />
         </Routes>
 
         <Footer />

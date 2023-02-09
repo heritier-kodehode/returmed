@@ -1,0 +1,16 @@
+/* Define the animation */
+@keyframes shine {
+    0% { text-shadow: 0 0 1px rgb(66, 164, 48); }
+    40% { text-shadow: 0 0 3px rgb(66, 164, 48);  }
+    60% { text-shadow: 0 0 3px rgb(66, 164, 48);  }
+    100% { text-shadow: 0 0 1px rgb(66, 164, 48);  }
+  }
+  
+  /* Apply the animation to the element */
+  .parent {
+    animation: shine 5s ease-in-out infinite;
+    padding: 0 0 2rem 0;
+  }
+
+
+  
