@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import styled from 'styled-components';
+
 import {
-  SectionContainer,
+  SectionContainerAbout,
   AboutHeader,
   AboutTitle,
   AboutIntroTextContainer,
@@ -20,6 +20,7 @@ import oleAlexander from '../../images/OleAlexander.webp';
 import elisabeth from '../../images/elisabeth.webp';
 import larsb from '../../images/larsb.webp';
 import KristineB from '../../images/kristineB.webp';
+import HeritierImg from '../../images/heritio.webp';
 import './about.css';
 
 function Employee({ img, name, title, education, story, email }) {
@@ -40,7 +41,7 @@ function Employee({ img, name, title, education, story, email }) {
 function About() {
   const { langData } = useContext(Context);
   return (
-    <SectionContainer>
+    <SectionContainerAbout>
       <AboutHeader>
         <AboutTitle>{langData.teamIntro[0]}</AboutTitle>
       </AboutHeader>
@@ -80,8 +81,16 @@ function About() {
           story={langData.kristine[3]}
           email={langData.kristine[4]}
         />
+        <Employee
+          img={HeritierImg}
+          name={langData.heritier[0]}
+          title={langData.heritier[1]}
+          education={langData.heritier[2]}
+          story={langData.heritier[3]}
+          email={langData.heritier[4]}
+        />
       </EmployeList>
-    </SectionContainer>
+    </SectionContainerAbout>
   );
 }
 

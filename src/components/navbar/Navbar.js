@@ -14,18 +14,20 @@ const LangBtn = styled.button`
   border: none;
   padding: 0 5px;
   cursor: pointer;
-  border: 1px solid palevioletred;
+  border: 1px solid #138851;
   background-color: ${(props) =>
-    props.activeLang === langDataEng ? 'white' : 'red'};
+    props.activeLang === langDataEng ? 'white' : '#138851'};
+  color: ${(props) => (props.activeLang === langDataEng ? 'black' : 'white')};
 `;
 const LangBtnSecond = styled.button`
   font-size: 13px;
   border: none;
   padding: 0 5px;
   cursor: pointer;
-  border: 1px solid palevioletred;
+  border: 1px solid #138851;
   background-color: ${(props) =>
-    props.activeLang === langDataEng ? 'red' : 'white'};
+    props.activeLang === langDataEng ? '#138851' : 'white'};
+  color: ${(props) => (props.activeLang === langDataEng ? 'white' : 'black')};
 `;
 
 const LangText = styled.span`
@@ -33,7 +35,7 @@ const LangText = styled.span`
   border: none;
   padding: 0 5px;
   font-weight: 900;
-  color: red;
+  color: #138851;
   text-decoration: underline;
 `;
 
@@ -118,34 +120,12 @@ const MenuContainer = styled.ul`
   width: 100%;
   height: 75px;
   display: flex;
-  background-color: #21212d;
+  background-color: black;
   color: white;
-  align-items: center;
-  padding: 2rem 2rem;
+  align-items: stretch;
 
   @media (max-width: 990px) {
     display: none;
-  }
-`;
-const MenuItem = styled.li`
-  list-style: none;
-  padding-right: 1rem;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: white;
-`;
-const MenuContact = styled(MenuItem)`
-  padding-left: 0.8rem;
-  background-color: #385d6d;
-  height: 75px;
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  transition: all 0.7s;
-  width: 130px;
-  &:hover {
-    background-color: black;
   }
 `;
 
@@ -193,25 +173,44 @@ const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   color: white;
   width: 100%;
+  padding: 2rem 0.5rem;
+  font-weight: 600;
+  border-right: 1px solid #385d6d;
+  background-color: #21212d;
+  &.active {
+    background-color: #385d6d;
+  }
   &:hover {
+    background-color: #385d6d;
+    color: yellow;
+  }
+`;
+const StyledNavLinkContact = styled(NavLink)`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  margin: 0 auto 0 150px;
+  font-weight: 600;
+  border-right: 5px dashed #385d6d;
+  border-left: 2px dashed #385d6d;
+  background-color: #21212d;
+  &:hover {
+    background-color: #385d6d;
+    color: yellow;
+  }
+  &.active {
+    background-color: #385d6d;
   }
 `;
 
 //Navigation Header
 function Navbar() {
   const { langData, handleLanguage } = useContext(Context);
-  const navLinkStyles = ({ isActive }) => {
-    return {
-      color: isActive ? 'lightgreen' : 'white',
-      textDecoration: 'none',
-    };
-  };
-  const navLinkStylessecond = ({ isActive }) => {
-    return {
-      color: isActive ? 'lightgreen' : 'yellow',
-      textDecoration: 'none',
-    };
-  };
 
   const [mobileMenuActive = false, setMobileMenuActive] = useState();
 
@@ -222,7 +221,9 @@ function Navbar() {
   return (
     <NavBarContainer>
       <LogoContainer>
-        <LogoImgHeader src={menuLogo} placeholder='logo' />
+        <Link to=''>
+          <LogoImgHeader src={menuLogo} placeholder='logo' />
+        </Link>
         <LangDiv>
           <LangText>Lang</LangText>
           <LangBtnSecond
@@ -255,37 +256,37 @@ function Navbar() {
           </MobileMenuListLogo>
 
           <MobileMenuListItem>
-            <StyledMobLink onClick={handleMobileMenu} to='/'>
+            <StyledMobLink onClick={handleMobileMenu} to=''>
               {langData.navBar[0]}
             </StyledMobLink>
           </MobileMenuListItem>
           <MobileMenuListItem>
-            <StyledMobLink onClick={handleMobileMenu} to='/partners'>
+            <StyledMobLink onClick={handleMobileMenu} to='partners'>
               {langData.navBar[1]}
             </StyledMobLink>
           </MobileMenuListItem>
           <MobileMenuListItem>
-            <StyledMobLink onClick={handleMobileMenu} to='/our-vision'>
+            <StyledMobLink onClick={handleMobileMenu} to='our-vision'>
               {langData.navBar[2]}
             </StyledMobLink>
           </MobileMenuListItem>
           <MobileMenuListItem>
-            <StyledMobLink onClick={handleMobileMenu} to='/about'>
+            <StyledMobLink onClick={handleMobileMenu} to='about'>
               {langData.navBar[3]}
             </StyledMobLink>
           </MobileMenuListItem>
           <MobileMenuListItem>
-            <StyledMobLink onClick={handleMobileMenu} to='/return-unit'>
+            <StyledMobLink onClick={handleMobileMenu} to='return-unit'>
               {langData.navBar[4]}
             </StyledMobLink>
           </MobileMenuListItem>
           <MobileMenuListItem>
-            <StyledMobLink onClick={handleMobileMenu} to='/blog'>
+            <StyledMobLink onClick={handleMobileMenu} to='blog'>
               {langData.navBar[5]}
             </StyledMobLink>
           </MobileMenuListItem>
           <MobileMenuListItem>
-            <StyledMobLink onClick={handleMobileMenu} to='/contact-us'>
+            <StyledMobLink onClick={handleMobileMenu} to='contact-us'>
               {langData.navBar[6]}
             </StyledMobLink>
           </MobileMenuListItem>
@@ -293,39 +294,21 @@ function Navbar() {
         <StyledIcon onClick={handleMobileMenu} icon={faBars} />
       </MobileMenuContainer>
       <MenuContainer>
-        <MenuItem>
-          <NavLink style={navLinkStyles} to='/'>
-            {langData.navBar[0]}
-          </NavLink>
-        </MenuItem>
-        <MenuItem>
-          <NavLink style={navLinkStyles} to='/partners'>
-            {langData.navBar[1]}
-          </NavLink>
-        </MenuItem>
-        <MenuItem>
-          <NavLink style={navLinkStyles} to='/our-vision'>
-            {langData.navBar[2]}
-          </NavLink>
-        </MenuItem>
-        <MenuItem>
-          <NavLink style={navLinkStyles} to='/about'>
-            {langData.navBar[3]}
-          </NavLink>
-        </MenuItem>
-        <MenuItem>
-          <NavLink style={navLinkStyles} to='/return-unit'>
-            {langData.navBar[4]}
-          </NavLink>
-        </MenuItem>
-        <MenuItem>
-          <NavLink style={navLinkStylessecond} to='/blog'>
-            Blog
-          </NavLink>
-        </MenuItem>
-        <MenuContact>
-          <StyledNavLink to='/contact-us'>{langData.navBar[6]}</StyledNavLink>
-        </MenuContact>
+        <StyledNavLink to=''>{langData.navBar[0]}</StyledNavLink>
+
+        <StyledNavLink to='partners'>{langData.navBar[1]}</StyledNavLink>
+
+        <StyledNavLink to='our-vision'>{langData.navBar[2]}</StyledNavLink>
+
+        <StyledNavLink to='about'>{langData.navBar[3]}</StyledNavLink>
+
+        <StyledNavLink to='return-unit'>{langData.navBar[4]}</StyledNavLink>
+
+        <StyledNavLink to='blog'>Blog</StyledNavLink>
+
+        <StyledNavLinkContact to='contact-us'>
+          {langData.navBar[6]}
+        </StyledNavLinkContact>
       </MenuContainer>
     </NavBarContainer>
   );

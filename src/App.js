@@ -7,7 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
 import Home from './pages/home/home';
-import Partners from './pages/partners/Partners';
+import Partners from './pages/partners/partners';
 import Vision from './pages/vision/vision';
 import Returnunit from './pages/returnunit/returnunit';
 import Contactus from './pages/contactus/contactus';

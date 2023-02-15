@@ -6,40 +6,12 @@ import { client } from '../../lib/client';
 
 import Blogpost from '../../components/blogpost/blogpost';
 import BlogpostPreview from '../../components/blogpost/blogpostpreview';
-const SectionContainer = styled.div`
-  width: 100%;
-  max-width: 100%;
-  min-width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  margin: 7rem auto 0 auto;
-  @media (min-width: 990px) {
-    margin-top: 100px;
 
-    flex-wrap: wrap;
-  }
-`;
-
-const SectionHeader = styled.header`
-  width: 100%;
-  background: #385d6d;
-  padding: 2rem 0;
-  @media (min-width: 990px) {
-    margin-top: 0;
-  }
-`;
-
-const SectionTitle = styled.h2`
-  letter-spacing: normal;
-  text-transform: uppercase;
-  width: 100%;
-  text-align: center;
-  font-size: calc(29px + (24 - 16) * (100vw - 400px) / (800 - 400));
-
-  text-decoration: underline;
-  color: white;
-`;
+import {
+  SectionContainerBlog,
+  SectionHeaderBlog,
+  SectionTitleBlog,
+} from '../../components/styled/styled';
 
 function Blog() {
   const [posts, setPosts] = useState([]);
@@ -63,10 +35,10 @@ function Blog() {
   }, []);
 
   return (
-    <SectionContainer>
-      <SectionHeader>
-        <SectionTitle>Blog</SectionTitle>
-      </SectionHeader>
+    <SectionContainerBlog>
+      <SectionHeaderBlog>
+        <SectionTitleBlog>Blog</SectionTitleBlog>
+      </SectionHeaderBlog>
       {!posts ? (
         <h1>Loading...</h1>
       ) : (
@@ -74,7 +46,7 @@ function Blog() {
           return <BlogpostPreview post={post} key={post.slug.current} />;
         })
       )}
-    </SectionContainer>
+    </SectionContainerBlog>
   );
 }
 

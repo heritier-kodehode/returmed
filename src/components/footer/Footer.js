@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../../images/medreturlogonobg.webp';
 import { Context } from '../../App';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { InstagramIcon, LinkedinIcon } from '../iconssvg/icons';
 
 const FooterContainer = styled.footer`
@@ -34,8 +34,6 @@ const FooterCopyRightContainer = styled.div`
 const FooterInfoSection = styled.div`
   padding: 2.5rem 0;
 `;
-
-const FooterContactSection = styled.div``;
 
 const FooterLogo = styled.img`
   width: 156px;
@@ -111,15 +109,33 @@ const FooterTextForm = styled.p`
 const CostumeLink = styled.a`
   text-decoration: none;
 `;
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #a5e099;
+`;
+
+const StyledAnchorTag = styled.a`
+  text-decoration: none;
+  color: #a5e099;
+`;
 
 function Footer() {
   const { langData } = useContext(Context);
+  const [email, setEmail] = useState('');
   let location = useLocation();
+  const navigate = useNavigate();
+  const handleClick = () => {
+    if (email.length <= 0) return;
+    navigate('/contact-us', { state: { message: email } });
+  };
+
   return (
     <FooterContainer>
       <FooterInfoContainer location={location}>
         <FooterInfoSection>
-          <FooterLogo src={logo} placeholder='Logo' />
+          <Link to=''>
+            <FooterLogo src={logo} placeholder='Logo' />
+          </Link>
           <FooterText>{langData.footer[9]}</FooterText>
           <FooterSocialIconsContainer>
             <CostumeLink href='https://www.instagram.com/medretur/'>
@@ -133,7 +149,7 @@ function Footer() {
         <FooterInfoContent>
           <FooterInfoTitle>
             {' '}
-            {location.pathname == '/contact-us' ? null : langData.footer[0]}
+            {location.pathname === '/contact-us' ? null : langData.footer[0]}
           </FooterInfoTitle>
           <FooterTextP>{langData.footer[1]}</FooterTextP>
           <FooterTextSmall>{langData.footer[2]}</FooterTextSmall>
@@ -144,23 +160,31 @@ function Footer() {
           <FooterTextP>{langData.footer[7]}</FooterTextP>
           <FooterTextSmall>{langData.footer[8]}</FooterTextSmall>
         </FooterInfoContent>
-        {location.pathname == '/contact-us' ? null : (
+        {location.pathname === '/contact-us' ? null : (
           <FooterInputContainer>
             <FooterTextForm>{langData.footer[14]}</FooterTextForm>
             <FooterForm>
               <FooterInputLabel>
                 {langData.footer[15]}
-                <FooterInput />
+                <FooterInput onChange={(e) => setEmail(e.target.value)} />
               </FooterInputLabel>
-              <FooterBtn>{langData.footer[16]}</FooterBtn>
+              <FooterBtn onClick={handleClick}>{langData.footer[16]}</FooterBtn>
             </FooterForm>
           </FooterInputContainer>
         )}
       </FooterInfoContainer>
       <FooterCopyRightContainer>
         <p>
-          {langData.footer[10]} <GreenSpan>Medretur</GreenSpan>.{' '}
-          {langData.footer[12]} <GreenSpan>Heritier Z.A</GreenSpan>
+          {langData.footer[10]}{' '}
+          <GreenSpan>
+            <StyledLink to=''>Medretur</StyledLink>{' '}
+          </GreenSpan>
+          . {langData.footer[12]}{' '}
+          <GreenSpan>
+            <StyledAnchorTag href='https://heritier-kodehode.github.io/Portfolio/'>
+              Heritier Z.A
+            </StyledAnchorTag>{' '}
+          </GreenSpan>
         </p>
       </FooterCopyRightContainer>
     </FooterContainer>

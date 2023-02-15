@@ -1,7 +1,7 @@
 export const langDataEng = {
   navBar: [
     'Home',
-    'Collaboration partners',
+    'Partners',
     'Our-vision',
     'About-us',
     'Return-unit',
@@ -118,6 +118,13 @@ export const langDataEng = {
     'BBA Economics and Administration',
     'Kristine wants to promote Medretur"s vision through her creativity and commitment to SoMe and sustainability. With a background in economics and master"s studies in economic analysis, Kristine contributes her expertise to the company. She is responsible for social media.',
     'kristine@medretur.no',
+  ],
+  heritier: [
+    'Heritier Z Akilimali',
+    'Front-end Developer',
+    'Mechanical Engineering',
+    'Heritier Akilimali is a skilled full-stack developer who has worked as a freelancer for five years with a focus on front-end development. He also has experience as a front-end developer at Jobloop on a planetarium project, and currently works as a front-end developer at Medretur, where he focuses on UX/UI with React and CMS implementation. Heritier is known for his strong communication skills and analytical problem-solving approach.',
+    'heritier.kodehode@gmail.com',
   ],
   returnEnheten: [
     'the return unit',
@@ -270,6 +277,13 @@ export const langDataNok = {
     'BBA Økonomi og administrasjon',
     'Kristine ønsker å fremme Medretur sin visjon gjennom sin kreativitet og engasjement for SoMe og bærekraft. Med bakgrunn i økonomi og masterstudier i økonomisk analyse, bidrar Kristine med sin kompetanse til bedriften. Hun er ansvarlig for sosiale medier.',
     'kristine@medretur.no',
+  ],
+  heritier: [
+    'Heritier Z Akilimali',
+    'Front-end Utvikler',
+    'Maskinteknikk',
+    'Heritier Akilimali er en dyktig full-stack utvikler som har jobbet som frilanser i fem år med fokus på front-end utvikling. Han har også erfaring som front-end utvikler hos Jobloop på et planetarium-prosjekt, og jobber for tiden som front-end utvikler hos Medretur, der han fokuserer på UX/UI med React og CMS-implementering. Heritier er kjent for sine sterke kommunikasjonsevner og analytiske problemløsningsmetoder.',
+    'heritier.kodehode@gmail.com',
   ],
   returnEnheten: [
     'returenheten',

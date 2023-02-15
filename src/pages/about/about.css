@@ -5,11 +5,12 @@
     flex-direction: column;
     width: 70%;
     max-width: 100%;
-    color: #206a5d;
+    color: #155d3b;
     margin: 2rem auto;
     border-radius: 5px;
     animation: shadow-animation 5s infinite;
     padding: .5rem ;
+    background-color: white;
 }
 
 

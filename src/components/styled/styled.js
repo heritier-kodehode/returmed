@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { keyframes, Keyframes } from 'styled-components';
+import { keyframes } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-//common
 
 export const SectionContainer = styled.div`
   width: 100%;
@@ -19,12 +17,28 @@ export const SectionContainer = styled.div`
   }
 `;
 
-//About us
+//about.js
+export const SectionContainerAbout = styled.div`
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 7rem auto 0 auto;
+  background-color: #025955;
+  color: white;
+  @media (min-width: 990px) {
+    margin-top: 100px;
+
+    flex-wrap: wrap;
+  }
+`;
 
 export const AboutHeader = styled.header`
   width: 100%;
   background: #385d6d;
   margin-bottom: 5rem;
+  box-shadow: 0 5px 5px black;
 `;
 
 export const AboutTitle = styled.h2`
@@ -42,6 +56,7 @@ export const AboutTitle = styled.h2`
 export const AboutIntroTextContainer = styled.div`
   border-bottom: 2px solid #385d6d;
   padding: 0 0 4rem 0;
+  color: white;
 `;
 
 export const AboutIntroText = styled.p`
@@ -52,6 +67,7 @@ export const AboutIntroText = styled.p`
   color: #206a5d;
   font-size: 1.6rem;
   line-height: 2;
+  color: white;
   @media (min-width: 990px) {
     font-size: 1.8rem;
     width: 70%;
@@ -60,11 +76,20 @@ export const AboutIntroText = styled.p`
 
 export const UserImg = styled.img`
   width: 100%;
+  height: 230px;
 `;
-export const UserInfoContainer = styled.div``;
+export const UserInfoContainer = styled.div`
+  color: #155d3b;
+`;
 export const UserName = styled.h4`
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 0.4rem auto;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-decoration: underline;
 `;
 export const UserTitle = styled.h4`
   font-size: 1rem;
@@ -73,11 +98,19 @@ export const UserTitle = styled.h4`
   color: white;
   width: 100%;
   text-align: center;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 export const UserStory = styled.p`
   font-size: 0.8rem;
   margin: 1.4rem auto;
   line-height: 1.7;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 300px;
 `;
 export const UserEducation = styled.p`
   font-size: 0.8rem;
@@ -120,6 +153,7 @@ export const HomeBanner = styled.header`
   position: relative;
   height: 100vh;
   padding: 50px 0 100px 0;
+  box-shadow: 0 2px 5px;
 `;
 export const BgVideo = styled.video`
   object-fit: fill;
@@ -321,7 +355,6 @@ export const UnitImg = styled.img`
 `;
 
 export const UnitCtaContainer = styled.div`
-  border: 1px solid #6abe52;
   width: 90%;
   height: 7rem;
   display: flex;
@@ -406,4 +439,525 @@ export const UnitParagraphText = styled.p`
 export const CtaLinkReturnUnit = styled(Link)`
   text-decoration: none;
   color: #f5fdff;
+`;
+
+//partners.js
+
+export const PartnersContainer = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 7rem auto;
+  @media (min-width: 990px) {
+    margin-top: 100px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+`;
+
+export const PartnerHeader = styled.header`
+  width: 100%;
+  background: #385d6d;
+  margin-bottom: 5rem;
+  box-shadow: 0 5px 5px;
+`;
+
+export const PartnersTitle = styled.h1`
+  letter-spacing: normal;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  font-size: calc(29px + (24 - 16) * (100vw - 400px) / (800 - 400));
+  margin: 2rem 0;
+  border-top: 1px solid #6abe52;
+  text-decoration: underline;
+  color: white;
+  @media (min-width: 990px) {
+    border-top: none;
+  }
+`;
+
+export const PartnerLinkContainer = styled.a`
+  height: 5rem;
+  width: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  margin: 0.5rem auto;
+  padding: 7rem;
+
+  text-decoration: underline;
+  display: flex;
+  flex-direction: column;
+  color: #1c6758;
+  justify-content: space-evenly;
+  line-height: 1.8rem;
+  text-align: center;
+  transition: all 0.4s;
+  border: 4px solid #1c6758;
+  box-shadow: 10px 5px 5px gray;
+  &:hover {
+    text-decoration: wavy underline;
+    text-decoration-thickness: 2px;
+    transform: translateY(-3px);
+    border: 4px solid #6abe52;
+    color: #6abe52;
+    box-shadow: 10px 5px 5px black;
+  }
+  @media (min-width: 990px) {
+    width: 30rem;
+    margin: 1.5rem auto;
+  }
+`;
+
+export const PartnerLogoContainer = styled.img`
+  height: 3rem;
+`;
+
+//returnunit.js
+
+export const SectionContainerReturnUnit = styled.div`
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 7rem auto 0 auto;
+  @media (min-width: 990px) {
+    margin-top: 100px;
+
+    flex-wrap: wrap;
+  }
+`;
+
+export const SectionHeader = styled.header`
+  width: 100%;
+  background: #385d6d;
+  box-shadow: 0 5px 5px;
+  @media (min-width: 990px) {
+    margin-top: 0;
+  }
+`;
+
+export const SectionTitle = styled.h2`
+  letter-spacing: normal;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  font-size: calc(29px + (24 - 16) * (100vw - 400px) / (800 - 400));
+
+  padding: 2rem 0;
+  text-decoration: underline;
+  color: white;
+`;
+export const SectionIntro = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+`;
+export const SectionIntroText = styled.p`
+  font-size: 1.6rem;
+  width: 100%;
+  border: 1px solid #385d6d;
+  padding: 2rem 1rem;
+  background-color: #395e70;
+  color: white;
+  line-height: 1.6;
+  word-spacing: 1.5;
+
+  @media (min-width: 590px) and (max-width: 990px) {
+    width: 80%;
+    transform: translateY(-2rem);
+  }
+  @media (min-width: 990px) {
+    width: 60%;
+    transform: translateY(-2rem);
+  }
+`;
+
+export const SectionIntroTextSecond = styled.p`
+  font-size: 1.6rem;
+  width: 100%;
+
+  padding: 1rem 0;
+  background: #000;
+`;
+
+export const SectionIntroImageFirst = styled.img`
+  width: 100%;
+  height: auto;
+
+  @media (min-width: 590px) and (max-width: 990px) {
+  }
+  @media (min-width: 990px) {
+    width: 65%;
+    transform: translateX(-9rem);
+
+    z-index: -3;
+  }
+`;
+export const SectionIntroImageSecond = styled.img`
+  width: 70%;
+  height: auto;
+  background-color: transparent;
+  -webkit-filter: drop-shadow(0 0 1.5em rgba(20, 137, 82, 1));
+  filter: drop-shadow(0 0 1.5em rgba(20, 137, 82, 1));
+
+  @media (min-width: 590px) and (max-width: 990px) {
+    width: 40%;
+    transform: translateY(-2.5rem);
+  }
+  @media (min-width: 990px) {
+    width: 25%;
+    transform: translateX(40%);
+    transform: translateY(-3.5rem);
+  }
+`;
+
+export const SectionDivBottom = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+`;
+
+export const SectionBottomTextMiddle = styled.p`
+  font-size: 1.6rem;
+  width: 100%;
+  border: 1px solid #385d6d;
+  padding: 2rem 1rem;
+  background-color: #395e70;
+  color: white;
+  line-height: 1.6;
+  word-spacing: 1.5;
+
+  @media (min-width: 590px) and (max-width: 990px) {
+    width: 80%;
+    transform: translateY(-2rem);
+  }
+  @media (min-width: 990px) {
+    width: 60%;
+    transform: translateY(-5rem);
+  }
+`;
+
+export const SectionBottomText = styled.p`
+  border: 1px solid #385d6d;
+  padding: 2rem 1rem;
+  background-color: #395e70;
+  color: white;
+  line-height: 1.6;
+  word-spacing: 1.5;
+  margin-top: 1.5rem;
+  font-size: 1.6rem;
+  width: 100%;
+
+  @media (min-width: 590px) and (max-width: 990px) {
+    width: 80%;
+    transform: translateY(-2rem);
+  }
+  @media (min-width: 990px) {
+    width: 60%;
+    transform: translateY(-2rem);
+  }
+`;
+
+export const SectionBottomTextDark = styled.p`
+  background-color: white;
+  color: #395e70;
+  word-spacing: 1.5;
+`;
+
+//contactus.js
+
+export const SectionContainerContactUs = styled.div`
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 7rem auto 0 auto;
+  @media (min-width: 990px) {
+    margin-top: 100px;
+
+    flex-wrap: wrap;
+  }
+`;
+
+export const SectionTitleContactUs = styled.h2`
+  letter-spacing: normal;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  font-size: calc(29px + (24 - 16) * (100vw - 400px) / (800 - 400));
+
+  padding: 2rem 0;
+  text-decoration: underline;
+  color: white;
+`;
+
+export const SectionIntroContactUs = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: #385d6d;
+`;
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+
+  margin: 0 auto;
+`;
+export const Label = styled.label`
+  color: white;
+  margin: 0.5rem 0;
+  font-size: 1.6rem;
+`;
+
+export const FormInput = styled.input`
+  width: 25rem;
+  padding: 0.5rem;
+  background-color: #138851;
+  color: white;
+  border: none;
+  outline: none;
+`;
+
+export const FormTextArea = styled.textarea`
+  width: 25rem;
+  resize: none;
+  max-width: 25rem;
+  background-color: #138851;
+  color: white;
+  outline: none;
+  padding: 0.5rem;
+  height: 15rem;
+  font-size: 1.3rem;
+`;
+export const FormSubmitBtn = styled.button`
+  width: 25rem;
+  margin: 1rem 0;
+  padding: 1rem 0;
+  border: 2px solid white;
+  font-size: 2rem;
+  background-color: #385d6d;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #138851;
+    font-style: oblique;
+  }
+  &:active {
+    font-style: normal;
+  }
+`;
+
+export const Comfirmationmodal = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  border-radius: 10px;
+`;
+
+export const ConfirmationText = styled.p``;
+
+export const Errormodal = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  border-radius: 10px;
+  color: black;
+  display: flex;
+  border: 2px solid orangered;
+  align-items: center;
+`;
+
+export const ErrorModalText = styled.p`
+  text-transform: uppercase;
+  text-decoration: underline;
+`;
+
+export const ErrorCloseBtn = styled.button`
+  padding: 0 0.5rem;
+  height: 70px;
+  width: 70px;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+  font-size: 19px;
+  border-radius: 50%;
+  border: 10px solid #395e70;
+  font-weight: 900;
+  text-align: center;
+
+  &:hover {
+    background-color: gray;
+  }
+  &:active {
+    background-color: white;
+    color: black;
+  }
+`;
+
+export const SourcesContainer = styled.div`
+  width: 80%;
+  margin: 2rem 0;
+
+  @media (min-width: 990px) {
+    width: 60%;
+    margin-top: 100px;
+
+    flex-wrap: wrap;
+  }
+`;
+
+export const SourceText = styled.p`
+  font-size: 0.8rem;
+  color: gray;
+  margin: 1rem 0;
+  word-wrap: break-word;
+`;
+
+//blog.js
+
+export const SectionContainerBlog = styled.div`
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 7rem auto 0 auto;
+  @media (min-width: 990px) {
+    margin-top: 100px;
+
+    flex-wrap: wrap;
+  }
+`;
+
+export const SectionHeaderBlog = styled.header`
+  width: 100%;
+  background: #385d6d;
+  padding: 2rem 0;
+  box-shadow: 5px 0 5px;
+  @media (min-width: 990px) {
+    margin-top: 0;
+  }
+`;
+
+export const SectionTitleBlog = styled.h2`
+  letter-spacing: normal;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  font-size: calc(29px + (24 - 16) * (100vw - 400px) / (800 - 400));
+
+  text-decoration: underline;
+  color: white;
+`;
+
+//vision.js
+
+export const SectionContainerVision = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 7rem auto 0 auto;
+  background-color: #025955;
+  @media (min-width: 990px) {
+    margin-top: 100px;
+
+    flex-wrap: wrap;
+  }
+`;
+
+export const VisionHeader = styled.header`
+  width: 100%;
+  background: #385d6d;
+  margin-bottom: 5rem;
+  box-shadow: 0 5px 5px;
+`;
+
+export const VisionTitle = styled.h2`
+  letter-spacing: normal;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  font-size: calc(29px + (24 - 16) * (100vw - 400px) / (800 - 400));
+  margin: 2rem 0;
+  border-top: 1px solid #6abe52;
+  text-decoration: underline;
+  color: white;
+
+  @media (min-width: 990px) {
+    border-top: none;
+  }
+`;
+
+export const VisionIntroContainer = styled.div`
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 990px) {
+    flex-direction: row;
+  }
+`;
+export const TextContainer = styled.div`
+  @media (min-width: 990px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+`;
+export const ImgInIntro = styled.img`
+  width: 60%;
+  margin: 3rem auto 0 auto;
+  @media (min-width: 990px) {
+    width: 100%;
+    margin: 0 auto;
+  }
+`;
+
+export const Title = styled.h2`
+  color: white;
+  font-size: 2rem;
+  margin: 2rem 0;
+
+  @media (min-width: 990px) {
+    font-size: 4rem;
+  }
+`;
+
+export const IntroText = styled.p`
+  color: white;
+  font-size: 1.6rem;
+  line-height: 1.6;
+
+  @media (min-width: 990px) {
+    font-size: 2rem;
+  }
 `;
