@@ -175,14 +175,21 @@ const StyledNavLink = styled(NavLink)`
   width: 100%;
   padding: 2rem 0.5rem;
   font-weight: 600;
-  border-right: 1px solid #385d6d;
+  border-right: 1px dashed #385d6d;
+  border-left: 1px dashed #385d6d;
   background-color: #21212d;
   &.active {
     background-color: #385d6d;
   }
+
   &:hover {
     background-color: #385d6d;
     color: yellow;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+  }
+  &:active {
+    font-style: oblique;
   }
 `;
 const StyledNavLinkContact = styled(NavLink)`
@@ -205,6 +212,9 @@ const StyledNavLinkContact = styled(NavLink)`
   }
   &.active {
     background-color: #385d6d;
+  }
+  &:active {
+    font-style: oblique;
   }
 `;
 

@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { client } from '../../lib/client';
 import imageUrlBuilder from '@sanity/image-url';
 
 const BlogTitle = styled.h3`
   font-size: 1.5rem;
-  margin: 0.5rem auto;
+  margin: 2.5rem auto;
+  color: #ced4da;
+  @media (min-width: 990px) {
+    width: 70%;
+    font-size: 2.5rem;
+  }
 `;
 const BlogMainImage = styled.img`
   width: 100%;
   height: 200px;
   padding: 1rem 0;
+  margin: 2rem 0;
 `;
 const BlogBodyText = styled.p`
   margin: 1.5rem auto;
@@ -19,8 +25,10 @@ const BlogBodyText = styled.p`
   word-spacing: 1.8;
   width: 95%;
   font-weight: 700;
+  color: #ced4da;
   @media (min-width: 990px) {
     width: 70%;
+    font-size: 1.5rem;
   }
 `;
 
@@ -87,7 +95,7 @@ function Blogpost() {
         console.log(document.title);
       })
       .catch((error) => console.log(error));
-  }, [slug]);
+  });
   useEffect(() => {
     window.scrollTo({
       top: 0,

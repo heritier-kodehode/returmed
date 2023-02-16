@@ -586,8 +586,9 @@ export const SectionIntroTextSecond = styled.p`
   font-size: 1.6rem;
   width: 100%;
 
-  padding: 1rem 0;
+  padding: 1rem;
   background: #000;
+  border-radius: 5px;
 `;
 
 export const SectionIntroImageFirst = styled.img`
@@ -598,7 +599,6 @@ export const SectionIntroImageFirst = styled.img`
   }
   @media (min-width: 990px) {
     width: 65%;
-    transform: translateX(-9rem);
 
     z-index: -3;
   }
@@ -670,8 +670,6 @@ export const SectionBottomText = styled.p`
 `;
 
 export const SectionBottomTextDark = styled.p`
-  background-color: white;
-  color: #395e70;
   word-spacing: 1.5;
 `;
 
@@ -821,12 +819,19 @@ export const ErrorCloseBtn = styled.button`
 `;
 
 export const SourcesContainer = styled.div`
-  width: 80%;
-  margin: 2rem 0;
+  width: 100%;
+  padding: 0 2rem;
+  background-color: #dee2e6;
 
+  @media (min-width: 590px) and (max-width: 990px) {
+    width: 80%;
+    margin: 100px 0;
+
+    flex-wrap: wrap;
+  }
   @media (min-width: 990px) {
     width: 60%;
-    margin-top: 100px;
+    margin: 100px 0;
 
     flex-wrap: wrap;
   }
