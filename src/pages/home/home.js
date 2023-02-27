@@ -24,7 +24,6 @@ import {
   ImgCtaContainer,
   UnitImg,
   UnitCtaContainer,
-  pulseAnimation,
   UnitCtaArrow,
   UnitCtaText,
   UnitTextContainer,
@@ -34,13 +33,12 @@ import {
 } from '../../components/styled/styled';
 
 import { Context } from '../../App';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons';
-import { keyframes, Keyframes } from 'styled-components';
-import styled from 'styled-components';
+
 import bgVideo from '../../video/medsfall.webm';
 import bgVideoHD from '../../video/medsfall.mp4';
-import { Link } from 'react-router-dom';
+
 import farmaImg from '../../images/Farmas.webp';
 import nathanDiasImg from '../../images/NathanDias.webp';
 import oceanWaterImg from '../../images/OceanWater.webp';

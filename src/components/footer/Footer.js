@@ -43,6 +43,7 @@ const FooterLogo = styled.img`
 
 const FooterSocialIconsContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `;
 
 const GreenSpan = styled.span`
@@ -118,6 +119,11 @@ const StyledAnchorTag = styled.a`
   text-decoration: none;
   color: #a5e099;
 `;
+const MailToLink = styled.a`
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+`;
 
 function Footer() {
   const { langData } = useContext(Context);
@@ -152,11 +158,39 @@ function Footer() {
             {location.pathname === '/contact-us' ? null : langData.footer[0]}
           </FooterInfoTitle>
           <FooterTextP>{langData.footer[1]}</FooterTextP>
-          <FooterTextSmall>{langData.footer[2]}</FooterTextSmall>
+          <FooterTextSmall>
+            <MailToLink href={`mailto:${langData.footer[2]}`}>
+              {langData.footer[2]}
+            </MailToLink>
+          </FooterTextSmall>
           <FooterTextP>{langData.footer[3]}</FooterTextP>
-          <FooterTextSmall>{langData.footer[4]}</FooterTextSmall>
-          <FooterTextSmall>{langData.footer[5]}</FooterTextSmall>
-          <FooterTextSmall>{langData.footer[6]}</FooterTextSmall>
+          <FooterTextSmall>
+            <MailToLink
+              href='https://norgeskart.no/#!?project=norgeskart&layers=1002&zoom=15&lat=6626510.73&lon=-51206.78&sok=Smedasundet%2096&markerLat=6626579.204434125&markerLon=-51237.6263796991&p=searchOptionsPanel'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              {langData.footer[4]}
+            </MailToLink>{' '}
+          </FooterTextSmall>
+          <FooterTextSmall>
+            <MailToLink
+              href='https://norgeskart.no/#!?project=norgeskart&layers=1002&zoom=15&lat=6626510.73&lon=-51206.78&sok=Smedasundet%2096&markerLat=6626579.204434125&markerLon=-51237.6263796991&p=searchOptionsPanel'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              {langData.footer[5]}
+            </MailToLink>
+          </FooterTextSmall>
+          <FooterTextSmall>
+            <MailToLink
+              href='https://norgeskart.no/#!?project=norgeskart&layers=1002&zoom=15&lat=6626510.73&lon=-51206.78&sok=Smedasundet%2096&markerLat=6626579.204434125&markerLon=-51237.6263796991&p=searchOptionsPanel'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              {langData.footer[6]}
+            </MailToLink>
+          </FooterTextSmall>
           <FooterTextP>{langData.footer[7]}</FooterTextP>
           <FooterTextSmall>{langData.footer[8]}</FooterTextSmall>
         </FooterInfoContent>

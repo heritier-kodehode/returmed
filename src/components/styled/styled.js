@@ -139,6 +139,7 @@ export const EmployeList = styled.div`
 
 export const HomeContainer = styled.main`
   width: 100%;
+  min-width: 100%;
   display: flex;
   flex-direction: column;
   margin-top: 0;
@@ -225,7 +226,7 @@ export const CallToAction = styled(Link)`
   border: 3px solid #e8f9fd;
   border-radius: 100px;
   background-color: #1d8554;
-  font-size: clamp(16px, 1.5rem, 40px);
+  font-size: clamp(1rem, 1.5vw, 3rem);
   font-weight: 700;
   margin: 20px 10px;
   padding: 20px;
@@ -267,20 +268,10 @@ export const TriviaContainer = styled.div`
   padding: 60px 0;
   text-align: center;
   height: 550px;
-  cursor: pointer;
-  &:hover img {
-    border: 10px solid #59ce8f;
-  }
-
-  &:hover h5 {
-    border: 2px solid #59ce8f;
-    background-color: #59ce8f;
-    color: white;
-  }
 `;
 
 export const TriviaContainerGreenBg = styled(TriviaContainer)`
-  background-color: #2a855a;
+  background-color: #025955;
   color: white;
   margin: 0;
 
@@ -288,12 +279,6 @@ export const TriviaContainerGreenBg = styled(TriviaContainer)`
     margin: 0;
     transform: scaleY(1.1);
     border-radius: 10px;
-  }
-
-  &:hover h5 {
-    border: 2px solid #7fb77e;
-    background-color: white;
-    color: #6abe52;
   }
 `;
 
@@ -303,7 +288,7 @@ export const TriviaImage = styled.img`
 `;
 export const TriviaImageGreenBorder = styled.img`
   height: 250px;
-  border: 10px solid #2a855a;
+  border: 10px solid #025955;
 `;
 export const TriviaTitle = styled.h5`
   margin: 10px 0;
@@ -317,6 +302,8 @@ export const TriviaUnderTitle = styled.h3`
 export const TriviaInfoText = styled.p`
   width: 70%;
   color: #395e70;
+  height: 100%;
+  padding: 1rem 0;
 `;
 
 export const TriviaInfoTextLight = styled.p`
@@ -344,21 +331,22 @@ export const ImgCtaContainer = styled.div`
   align-items: center;
   padding-left: 2rem;
   padding-top: 10rem;
-  border-right: 0.5rem solid #36825e;
+  border-right: 0.5rem solid #025955;
   position: relative;
   flex-basis: 1;
   width: 100%;
 `;
 
 export const UnitImg = styled.img`
-  width: 35rem;
+  width: 100%;
+  max-width: 100%;
 `;
 
 export const UnitCtaContainer = styled.div`
   width: 90%;
   height: 7rem;
   display: flex;
-  background-color: #36825e;
+  background-color: #025955;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
@@ -396,7 +384,7 @@ export const UnitCtaArrow = styled(FontAwesomeIcon)`
   cursor: pointer;
 
   animation-name: ${pulseAnimation};
-  animation-duration: 0.4s;
+  animation-duration: 1.4s;
   animation-iteration-count: infinite;
 
   &:hover {
@@ -406,8 +394,8 @@ export const UnitCtaArrow = styled(FontAwesomeIcon)`
 `;
 
 export const UnitCtaText = styled.p`
-  font-size: calc(20px + (24 - 16) * (100vw - 400px) / (800 - 400));
-  margin-left: 60px;
+  font-size: clamp(0.6rem, 1.5vw, 1.5rem);
+  margin-left: 30px;
   color: #f5fdff;
 `;
 
@@ -421,19 +409,27 @@ export const UnitTextContainer = styled.div`
 `;
 
 export const UnitInfoTitleText = styled.h1`
-  font-size: 4rem;
+  font-size: 1.5rem;
   border-bottom: 2px solid #99cda9;
   padding: 3rem 5rem;
   border-bottom-style: dashed;
-  color: #339365;
+  color: #025955;
+  @media (min-width: 990px) {
+    font-size: 4rem;
+  }
 `;
 
 export const UnitParagraphText = styled.p`
-  color: #395e70;
-  border-bottom: 2px solid #99cda9;
-  padding: 2rem 5rem;
+  color: #025955;
+  border-bottom: 2px solid #025955;
+  padding: 2rem 1.5rem;
   border-bottom-style: dashed;
   line-height: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  @media (min-width: 990px) {
+    padding: 2rem 5rem;
+  }
 `;
 
 export const CtaLinkReturnUnit = styled(Link)`
@@ -448,7 +444,8 @@ export const PartnersContainer = styled.div`
   height: auto;
   display: flex;
   flex-direction: column;
-  margin: 7rem auto;
+  margin: 0 auto;
+  background-color: #025955;
   @media (min-width: 990px) {
     margin-top: 100px;
     flex-direction: row;
@@ -502,7 +499,7 @@ export const PartnerLinkContainer = styled.a`
   border: 4px solid #1c6758;
   box-shadow: 10px 5px 5px gray;
   &:hover {
-    text-decoration: wavy underline;
+    text-decoration: underline;
     text-decoration-thickness: 2px;
     transform: translateY(-3px);
     border: 4px solid #6abe52;
@@ -517,6 +514,7 @@ export const PartnerLinkContainer = styled.a`
 
 export const PartnerLogoContainer = styled.img`
   height: 3rem;
+  width: 100%;
 `;
 
 //returnunit.js
@@ -677,12 +675,11 @@ export const SectionBottomTextDark = styled.p`
 
 export const SectionContainerContactUs = styled.div`
   width: 100%;
-  max-width: 100%;
-  min-width: 100%;
+
   height: auto;
   display: flex;
   flex-direction: column;
-  margin: 7rem auto 0 auto;
+
   @media (min-width: 990px) {
     margin-top: 100px;
 
@@ -707,32 +704,36 @@ export const SectionIntroContactUs = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background: #385d6d;
+  background: #025955;
 `;
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-
+  width: 100%;
   margin: 0 auto;
 `;
 export const Label = styled.label`
   color: white;
-  margin: 0.5rem 0;
+  margin: 0.5rem auto;
   font-size: 1.6rem;
 `;
 
 export const FormInput = styled.input`
-  width: 25rem;
+  width: 70%;
+  margin: 0 auto;
   padding: 0.5rem;
   background-color: #138851;
   color: white;
   border: none;
   outline: none;
+  @media (min-width: 990px) {
+    width: 25rem;
+  }
 `;
 
 export const FormTextArea = styled.textarea`
-  width: 25rem;
+  width: 70%;
   resize: none;
   max-width: 25rem;
   background-color: #138851;
@@ -741,9 +742,13 @@ export const FormTextArea = styled.textarea`
   padding: 0.5rem;
   height: 15rem;
   font-size: 1.3rem;
+  margin: 0 auto;
+  @media (min-width: 990px) {
+    width: 25rem;
+  }
 `;
 export const FormSubmitBtn = styled.button`
-  width: 25rem;
+  width: 70%;
   margin: 1rem 0;
   padding: 1rem 0;
   border: 2px solid white;
@@ -751,13 +756,16 @@ export const FormSubmitBtn = styled.button`
   background-color: #385d6d;
   color: white;
   cursor: pointer;
-
+  margin: 0 auto;
   &:hover {
     background-color: #138851;
     font-style: oblique;
   }
   &:active {
     font-style: normal;
+  }
+  @media (min-width: 990px) {
+    width: 25rem;
   }
 `;
 
